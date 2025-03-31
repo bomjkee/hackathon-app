@@ -3,8 +3,8 @@ import { initData, type User, useSignal } from '@telegram-apps/sdk-react';
 import { List, Placeholder } from '@telegram-apps/telegram-ui';
 
 
-import { Page } from '../components/Page';
 import { type DisplayDataRow, DisplayData } from '../components/DisplayData/DisplayData';
+import { Page } from '../components/Page/Page';
 
 
 function getUserRows(user: User): DisplayDataRow[] {

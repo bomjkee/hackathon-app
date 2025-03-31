@@ -1,0 +1,150 @@
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--tg-theme-bg-color, #ffffff);
+  color: var(--tg-theme-text-color, #222222);
+}
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Адаптация под темную тему */
+.app.dark .error-message {
+  color: #ff6961;
+}
+
+.app.dark .spinner {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-top-color: var(--tg-theme-button-color, #007aff);
+}
+
+/* Экран загрузки */
+.app-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 16px;
+  background-color: var(--tg-theme-bg-color, #ffffff);
+  color: var(--tg-theme-text-color, #222222);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--tg-theme-button-color, #007aff);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Адаптация под iOS */
+.app[data-platform="ios"] button {
+  border-radius: 10px;
+}
+
+.app[data-platform="ios"] input,
+.app[data-platform="ios"] textarea,
+.app[data-platform="ios"] select {
+  border-radius: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--tg-theme-text-color, #222222);
+}
+
+button {
+  font-family: var(--font-family);
+}
+
+a {
+  text-decoration: none;
+  color: var(--tg-theme-link-color, #007aff);
+}
+
+/* Стили для скроллбара */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tg-theme-hint-color, #aaaaaa);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tg-theme-hint-color, #999999);
+}
+
+/* Общие стили для компонентов */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Глобальные утилитарные классы */
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 16px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.card {
+    background-color: var(--tg-theme-secondary-bg-color, #f1f1f1);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+} 

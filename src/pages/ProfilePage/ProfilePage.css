@@ -1,0 +1,505 @@
+.profile-header {
+    background: linear-gradient(135deg,
+        rgba(var(--primary-color-rgb), 0.1),
+        rgba(var(--accent-color-rgb), 0.1)
+    );
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--box-shadow-md);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn var(--transition-normal);
+}
+
+.profile-title {
+    font-size: var(--font-size-xxl);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 var(--spacing-md) 0;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.profile-subtitle {
+    color: var(--text-secondary);
+    font-size: var(--font-size-md);
+    line-height: 1.8;
+    margin: 0;
+    max-width: 800px;
+}
+
+.profile-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-xl);
+}
+
+.profile-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.profile-card {
+    background-color: var(--surface-dark);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--box-shadow-md);
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto var(--spacing-md);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    color: var(--text-on-primary);
+    font-weight: 600;
+    border: 4px solid var(--surface-dark);
+    box-shadow: var(--box-shadow-lg);
+}
+
+.profile-name {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+    text-align: center;
+    margin: 0 0 var(--spacing-xs) 0;
+    font-weight: 600;
+}
+
+.profile-role {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    text-align: center;
+    margin: 0;
+}
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+    font-weight: 600;
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin: 0;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.profile-action-button {
+    background-color: var(--surface-darker);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.profile-action-button:hover {
+    background-color: var(--surface-dark);
+    border-color: rgba(var(--primary-color-rgb), 0.3);
+    transform: translateY(-2px);
+}
+
+.profile-action-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.profile-main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.section-title {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+    margin: 0 0 var(--spacing-lg) 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.section-title svg {
+    color: var(--primary-color);
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.activity-item {
+    background-color: var(--surface-dark);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-normal);
+}
+
+.activity-item:hover {
+    transform: translateX(4px);
+    border-color: rgba(var(--primary-color-rgb), 0.3);
+    box-shadow: var(--box-shadow-md);
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+.activity-type {
+    font-size: var(--font-size-sm);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.activity-date {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.activity-content {
+    color: var(--text-primary);
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.teams-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.team-card {
+    background-color: var(--surface-dark);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.team-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(var(--primary-color-rgb), 0.3);
+    box-shadow: var(--box-shadow-md);
+}
+
+.team-name {
+    font-size: var(--font-size-md);
+    color: var(--text-primary);
+    margin: 0 0 var(--spacing-xs) 0;
+    font-weight: 500;
+}
+
+.team-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-members {
+    display: flex;
+    align-items: center;
+}
+
+.member-avatars {
+    display: flex;
+    margin-right: var(--spacing-xs);
+}
+
+.member-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--surface-dark);
+    margin-left: -8px;
+    background-color: var(--surface-darker);
+}
+
+.member-avatar:first-child {
+    margin-left: 0;
+}
+
+.member-count {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-header {
+        padding: var(--spacing-lg);
+    }
+
+    .profile-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .profile-content {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+        font-size: var(--font-size-lg);
+    }
+
+    .teams-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.profile-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: var(--tg-theme-hint-color);
+}
+
+.profile-error {
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 8px;
+    background-color: rgba(255, 0, 0, 0.1);
+    color: var(--tg-theme-text-color);
+}
+
+.profile-error p {
+    margin-bottom: 16px;
+}
+
+.profile-not-found {
+    padding: 16px;
+    text-align: center;
+    color: var(--tg-theme-hint-color);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.profile-section h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--tg-theme-text-color);
+}
+
+.profile-section p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.profile-teams {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.profile-team-card {
+    border: 1px solid var(--tg-theme-hint-color);
+    border-radius: 8px;
+    padding: 16px;
+    transition: transform 0.2s;
+}
+
+.profile-team-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.profile-team-card p {
+    font-size: 14px;
+    color: var(--tg-theme-hint-color);
+    margin-bottom: 12px;
+}
+
+@media (min-width: 576px) {
+    .profile-teams {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .profile-page {
+        padding: 24px;
+    }
+    
+    .profile-title {
+        font-size: 28px;
+    }
+}
+
+.profile-retry-button {
+    margin-top: 1rem;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.profile-user-info {
+    background-color: var(--tg-theme-secondary-bg-color, #f0f0f0);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.profile-info-item {
+    margin-bottom: 0.75rem;
+}
+
+.profile-info-item:last-child {
+    margin-bottom: 0;
+}
+
+.profile-info-label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.profile-section-title {
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--tg-theme-hint-color, #999999);
+    color: var(--tg-theme-text-color, #000000);
+}
+
+.profile-no-teams {
+    text-align: center;
+    padding: 1.5rem 0;
+    color: var(--tg-theme-hint-color, #999999);
+}
+
+.profile-link {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--tg-theme-link-color, #2481cc);
+}
+
+.profile-teams-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.team-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.team-card {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--tg-theme-secondary-bg-color, #f0f0f0);
+    transition: opacity 0.2s;
+}
+
+.team-card:hover {
+    opacity: 0.9;
+}
+
+.team-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.team-card-title {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--tg-theme-text-color, #000000);
+}
+
+.profile-team-type-badge {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+
+}
+
+.profile-team-type-badge.open {
+    background: rgba(var(--success-color-rgb), 0.1);
+    color: rgba(var(--success-color-rgb), 0.8);
+}
+  
+.profile-team-type-badge.closed {
+    background: rgba(var(--error-color-rgb), 0.1);
+    color: rgba(var(--error-color-rgb), 0.8);
+}
+
+.team-card-description {
+    margin-top: var(--spacing-md);
+    color: var(--tg-theme-hint-color, #999999);
+}
+
+.error-message {
+    color: #F44336;
+    margin-bottom: 1rem;
+}
+

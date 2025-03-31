@@ -1,0 +1,48 @@
+.error-message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  background-color: rgba(var(--error-color-rgb), 0.1);
+  border: 1px solid var(--error-color);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-sm);
+}
+
+.error-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.error-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--error-color);
+  margin-right: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+.error-text {
+  color: var(--error-color);
+  font-size: var(--font-size-md);
+  font-weight: 500;
+}
+
+.retry-button {
+  margin-top: var(--spacing-sm);
+  background-color: var(--error-color);
+  color: var(--text-on-primary);
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.retry-button:hover {
+  background-color: var(--error-color);
+  opacity: 0.9;
+} 

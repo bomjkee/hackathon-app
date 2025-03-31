@@ -1,25 +1,32 @@
-import { type Hackathon, type HackathonList, HackathonListSchema, HackathonSchema } from "../types/hackathon";
-import { createAPI } from "./api";
+import apiClient, { handleApiError, validateResponseStatus } from './api';
+import { 
+  HackathonsSchema,
+  HackathonInfoSchema,
+  type HackathonInfo, 
+  type Hackathons } from '../types/schemas';
 
-const api = createAPI();
-
-export const getHackathonList = async (): Promise<HackathonList> => {
-    try { 
-        const response = await api.get<HackathonList>('/hackathons');
-        return HackathonListSchema.parse(response.data)
-    } catch (error) {
-        console.error(`Ошибка при получении списка хакатонов: ${error}`);
-        throw error;
-    }
+/**
+ * Получение списка всех хакатонов
+ */
+export const getAllHackathons = async (): Promise<Hackathons> => {
+  try {
+    const response = await apiClient.get<Hackathons>('/hackathons');
+    validateResponseStatus(response);
+    return HackathonsSchema.parse(response.data);
+  } catch (error) {
+    throw handleApiError(error);
+  }
 };
 
-
-export const getHackathon = async (id: number): Promise<Hackathon> => {
-    try {
-        const response = await api.get<Hackathon>(`/hackathons/${id}`);
-        return HackathonSchema.parse(response.data);
-    } catch (error) {
-        console.error(`Ошибка при получении хакатона с ID ${id}:`, error);
-        throw error;
-    }
+/**
+ * Получение информации о конкретном хакатоне по ID
+ */
+export const getHackathonById = async (id: number): Promise<HackathonInfo> => {
+  try {
+    const response = await apiClient.get<HackathonInfo>(`/hackathons/${id}`);
+    validateResponseStatus(response);
+    return HackathonInfoSchema.parse(response.data);
+  } catch (error) {
+    throw handleApiError(error);
+  }
 };

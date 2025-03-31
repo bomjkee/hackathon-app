@@ -1,7 +1,7 @@
 import { themeParams, useSignal } from '@telegram-apps/sdk-react';
 import type { FC } from 'react';
 import { List } from '@telegram-apps/telegram-ui';
-import { Page } from '../components/Page';
+import { Page } from '../components/Page/Page';
 import { DisplayData } from '../components/DisplayData/DisplayData';
 
 

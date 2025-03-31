@@ -1,0 +1,22 @@
+.loader-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: transparent;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.loader-message {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  margin: 0;
+} 
